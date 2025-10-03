@@ -1,0 +1,25 @@
+# Lab 3 – Full Command History (Windows PowerShell)
+
+# Part 1
+cd $env:USERPROFILE
+git clone git@github.com:yusenrong46-afk/Lab-3-Repository.git
+cd "C:\Users\yusen21.stu\Lab-3-Repository"
+git checkout -b Markdown
+copy "C:\Users\yusen21.stu\Downloads\Lab 3 Question 2 Document.md" "lab3_q2.md"
+copy "C:\Users\yusen21.stu\Downloads\lab3_q1.md" "lab3_q1.md"
+git add lab3_q1.md lab3_q2.md
+git commit -m "Add Lab 3 Q1 and Q2 markdown files"
+git push -u origin Markdown
+
+# Part 2
+git checkout -b master
+git merge Markdown
+git push -u origin master
+git branch -d Markdown
+git push origin --delete Markdown
+git log --oneline
+copy "C:\Users\yusen21.stu\Pictures\Screenshots\Screenshot 2025-10-03 151543.png" "log_screenshot.png"
+notepad lab3_part2.txt
+git add lab3_part2.txt log_screenshot.png
+git commit -m "Add Lab 3 Part 2: merge log screenshot + command notes"
+git push origin master
